@@ -147,7 +147,7 @@ class BillPage extends StatelessWidget {
                 width: double.infinity,
                 decoration: BoxDecoration(
                   color: Colors.orange,
-                   borderRadius: BorderRadius.
+                  //  borderRadius: BorderRadius.
                 ),
                 child: Text("history"),
               )
