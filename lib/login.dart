@@ -2,11 +2,24 @@ import 'package:flutter/material.dart';
 import 'staked_icon.dart';
 import 'home.dart';
 
-
 class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
+    void _handlePressed() {
+      var onYes = () {
+        print("~~~ onYes");
+      };
+
+      var onNo = () {
+        print("~~~ onYes");
+      };
+
+      confirmDialog3(context, onYes, onNo).then((_) {
+        print("done");
+      });
+    }
+
     return new Scaffold(
       appBar: new AppBar(
         backgroundColor: Colors.transparent,
@@ -40,48 +53,38 @@ class LoginPage extends StatelessWidget {
               children: <Widget>[
                 Expanded(
                   child: Padding(
-                    padding: const EdgeInsets.only(right: 8, left: 8, top: 8, bottom: 8),
-                    
+                    padding: const EdgeInsets.only(
+                        right: 8, left: 8, top: 8, bottom: 8),
                     child: GestureDetector(
-                      onTap: (){
-                        Navigator.push(context, MaterialPageRoute(
-                          builder: (context) => HomePage()
-                        ));
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => HomePage()));
                       },
                       child: new Container(
                         padding: const EdgeInsets.all(20.0),
-                        alignment: Alignment.center,  
+                        alignment: Alignment.center,
                         height: 70.0,
                         decoration: new BoxDecoration(
                             color: Color(0xFF180191),
                             borderRadius: new BorderRadius.circular(10.0)),
                         child: new Text(
                           "Login",
-                          style:
-                              new TextStyle(fontSize: 20.0, color: Colors.white),
+                          style: new TextStyle(
+                              fontSize: 20.0, color: Colors.white),
                         ),
                       ),
                     ),
                   ),
                 ),
-              RaisedButton(
-                    padding: const EdgeInsets.only(right: 8, left: 8, top: 8),
-                    onPressed: () {},
-                    textColor: Colors.white,
-                    
-                    child: Container(
-                       
-                      height: 70.0,
-                      decoration: const BoxDecoration(
-                        gradient: LinearGradient(
-                          colors: <Color>[Colors.red, Colors.green, Colors.blue],
-                        ),
-                      ),
-                      padding: const EdgeInsets.all(10.0),
-                      child: Text('Gradient Button'),
-                    ),
+                new ListTile(
+                  title: new Text("Some item"),
+                  trailing: new RaisedButton(
+                    child: new Text("Delete"),
+                    onPressed: _handlePressed,
                   ),
-                
+                ),
               ],
             ),
             Expanded(
@@ -106,4 +109,31 @@ class LoginPage extends StatelessWidget {
       ),
     );
   }
+}
+
+Future<Null> confirmDialog3(BuildContext context, void onNo(), void onYes()) {
+  return showDialog<Null>(
+      context: context,
+      barrierDismissible: false, // user must tap button!
+      builder: (BuildContext context) {
+        return new AlertDialog(
+          title: new Text('Are you sure?'),
+          actions: <Widget>[
+            new FlatButton(
+              child: const Text('YES'),
+              onPressed: () {
+                Navigator.of(context).pop();
+                onYes();
+              },
+            ),
+            new FlatButton(
+              child: const Text('NO'),
+              onPressed: () {
+                Navigator.of(context).pop();
+                onNo();
+              },
+            ),
+          ],
+        );
+      });
 }
