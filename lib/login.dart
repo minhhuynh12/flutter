@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'staked_icon.dart';
 import 'home.dart';
+import 'bill.dart';
 
 class LoginPage extends StatelessWidget {
   @override
@@ -27,7 +28,6 @@ class LoginPage extends StatelessWidget {
         iconTheme: new IconThemeData(color: Color(0xFF18D191)),
       ),
       body: Container(
-        width: double.infinity,
         child: new Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
@@ -78,13 +78,52 @@ class LoginPage extends StatelessWidget {
                     ),
                   ),
                 ),
-                new ListTile(
-                  title: new Text("Some item"),
-                  trailing: new RaisedButton(
-                    child: new Text("Delete"),
-                    onPressed: _handlePressed,
+                Expanded(
+                  child: Padding(
+                    padding: const EdgeInsets.only(
+                        right: 8, left: 8, top: 8, bottom: 8),
+                    child: GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => BillPage()));
+                      },
+                      child: new Container(
+                        padding: const EdgeInsets.all(20.0),
+                        alignment: Alignment.center,
+                        height: 70.0,
+                        decoration: new BoxDecoration(
+                            color: Color(0xFF180191),
+                            borderRadius: new BorderRadius.circular(10.0)),
+                        child: new Text(
+                          "Bill",
+                          style: new TextStyle(
+                              fontSize: 20.0, color: Colors.white),
+                        ),
+                      ),
+                    ),
                   ),
                 ),
+                // InkWell(
+                //   onTap: _handlePressed,
+                //   child: Container(
+                //     child: Text('asdasda'),
+                //   ),
+                // )
+               new RaisedButton(
+                    onPressed: (){
+                      Navigator.push(context, MaterialPageRoute(
+                      builder: (context) => HomePage()
+                    ));
+                    },
+                    textColor: Colors.white,
+                    color: Colors.red,
+                    padding: const EdgeInsets.all(8.0),
+                    child: new Text(
+                      "Subtract",
+                    ),
+               )
               ],
             ),
             Expanded(
