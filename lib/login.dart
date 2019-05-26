@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'staked_icon.dart';
 import 'home.dart';
 import 'bill.dart';
+import 'cash.dart';
+import 'homeList.dart';
 
 class LoginPage extends StatelessWidget {
   @override
@@ -87,7 +89,7 @@ class LoginPage extends StatelessWidget {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => BillPage()));
+                                builder: (context) => CashPage()));
                       },
                       child: new Container(
                         padding: const EdgeInsets.all(20.0),
@@ -114,7 +116,7 @@ class LoginPage extends StatelessWidget {
                new RaisedButton(
                     onPressed: (){
                       Navigator.push(context, MaterialPageRoute(
-                      builder: (context) => HomePage()
+                      builder: (context) => HomeListPage()
                     ));
                     },
                     textColor: Colors.white,

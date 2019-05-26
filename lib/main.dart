@@ -2,6 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app/login.dart';
 import 'more.dart';
 import 'list_page.dart';
+import 'fee.dart';
+import 'add_address.dart';
+import 'request_api.dart';
+import 'otp.dart';
+import 'test_login.dart';
 
 void main() => runApp(MyApp());
 
@@ -106,7 +111,8 @@ class _MyHomePageState extends State<MyHomePage> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => LoginPage(),
+                              // builder: (context) => LoginPage(),
+                              builder: (context) => RequestApiPage()
                             ));
                       },
                       child: new Container(
@@ -136,7 +142,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => MorePage(),
+                              builder: (context) => AddAddressPage(),
                             ));
                       },
                       child: new Container(
@@ -146,7 +152,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             color: Color(0xFF180191),
                             borderRadius: new BorderRadius.circular(10.0)),
                         child: new Text(
-                          "Sign in with email",
+                          "Fee",
                           style: new TextStyle(
                               fontSize: 20.0, color: Colors.white),
                         ),
@@ -162,7 +168,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => ListPage(),
+                              builder: (context) => TestLoginPage(),
                             ));
                       },
                     child: new Container(

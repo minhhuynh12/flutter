@@ -25,13 +25,26 @@ class ListPage extends StatelessWidget {
             )),
       );
     }
-    return MaterialApp(
-      title: title,
-      home: _listPage(
-          // children: itemWidgets,
+    
+    // return MaterialApp(
+    //   title: title,
+    //   home: _listPage(
+    //       // children: itemWidgets,
 
+    //       ),
+    // );
+
+    return Scaffold(
+         appBar : new AppBar(
+       backgroundColor: Colors.transparent,
+        elevation: 0.0,
+        iconTheme: new IconThemeData(color: Color(0xFF18D191)),
+         ),
+          body: Column(
+            children: itemWidgets,
           ),
     );
+
   }
 }
 

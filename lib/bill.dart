@@ -25,12 +25,13 @@ class BillPage extends StatelessWidget {
                       decoration: new BoxDecoration(
                           color: Colors.white,
                           borderRadius: new BorderRadius.circular(8.0)),
-                      child: new Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      child: new Column(
                         children: <Widget>[
                           new Container(
                             child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: <Widget>[
+                                
                                 new Container(
                                   height: 50.0,
                                   width: 50.0,
@@ -43,37 +44,36 @@ class BillPage extends StatelessWidget {
                                     child: ImageAsset(),
                                   ),
                                 ),
-                                SizedBox(
-                                  width: 8.0,
-                                ),
                                 Text(
                                   "Cash dilivered",
                                   style: new TextStyle(
                                       fontSize: 16.0, color: Colors.orange),
                                 ),
-                              ],
-                            ),
-                          ),
-                          new Container(
-                            child: Row(
-                              children: <Widget>[
-                                Text(
-                                  "100",
-                                  style: new TextStyle(
-                                      fontSize: 16.0,
-                                      color: Colors.orange,
-                                      fontWeight: FontWeight.bold),
-                                ),
-                                Padding(
-                                  padding: const EdgeInsets.only(top: 4.0),
-                                  child: Text(
-                                    " USD",
-                                    style: new TextStyle(
-                                        fontSize: 11.0,
-                                        color: Colors.orange,
-                                        fontWeight: FontWeight.bold),
+                                new Container(
+                                
+                                  child: Row(
+                                    children: <Widget>[
+                                      Text(
+                                        "100",
+                                        style: new TextStyle(
+                                            fontSize: 16.0,
+                                            color: Colors.orange,
+                                            fontWeight: FontWeight.bold),
+                                      ),
+                                      Padding(
+                                        padding:
+                                            const EdgeInsets.only(top: 4.0),
+                                        child: Text(
+                                          " USD",
+                                          style: new TextStyle(
+                                              fontSize: 11.0,
+                                              color: Colors.orange,
+                                              fontWeight: FontWeight.bold),
+                                        ),
+                                      )
+                                    ],
                                   ),
-                                )
+                                ),
                               ],
                             ),
                           ),
