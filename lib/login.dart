@@ -26,8 +26,9 @@ class LoginPage extends StatelessWidget {
     return new Scaffold(
       appBar: new AppBar(
         backgroundColor: 
+        //tttttttttt
         Colors.transparent,
-        
+
         elevation: 0.0,
         iconTheme: new IconThemeData(color: Color(0xFF18D191)),
       ),
