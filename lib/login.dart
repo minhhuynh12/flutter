@@ -27,7 +27,7 @@ class LoginPage extends StatelessWidget {
       appBar: new AppBar(
         backgroundColor: 
 
-        //tttttttttt
+        //minhhc
 
         Colors.transparent,
 
@@ -41,7 +41,6 @@ class LoginPage extends StatelessWidget {
             new StackedIcons(),
             new Row(),
             Padding(
-             //test
               padding:
                   const EdgeInsets.symmetric(horizontal: 20.0, vertical: 20.0),
               child: new TextField(
