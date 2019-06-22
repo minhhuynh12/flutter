@@ -41,6 +41,7 @@ class LoginPage extends StatelessWidget {
             new StackedIcons(),
             new Row(),
             Padding(
+             //test
               padding:
                   const EdgeInsets.symmetric(horizontal: 20.0, vertical: 20.0),
               child: new TextField(
