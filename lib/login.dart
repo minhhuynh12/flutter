@@ -26,7 +26,9 @@ class LoginPage extends StatelessWidget {
     return new Scaffold(
       appBar: new AppBar(
         backgroundColor: 
+
         //tttttttttt
+
         Colors.transparent,
 
         elevation: 0.0,
